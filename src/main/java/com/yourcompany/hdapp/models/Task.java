@@ -1,4 +1,4 @@
-package main.java.com.yourcompany.hdapp.models;
+package com.yourcompany.hdapp.models;
 
 public class Task {
     private String id;

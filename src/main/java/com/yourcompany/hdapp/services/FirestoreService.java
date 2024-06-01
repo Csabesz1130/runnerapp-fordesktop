@@ -5,13 +5,14 @@ import com.google.cloud.firestore.*;
 import com.yourcompany.hdapp.models.Task;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
+import com.google.firebase.cloud.FirestoreClient;
 import java.util.stream.Collectors;
 
 public class FirestoreService {
     private Firestore db;
 
     public FirestoreService() {
-        db = FirestoreClient.getFirestore();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
     }
 
     public List<Task> getAllTasks() {
