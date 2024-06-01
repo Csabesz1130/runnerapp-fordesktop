@@ -6,7 +6,15 @@ public class Task {
     private String description;
     private String status;
 
-    // Getters and setters
+    public Task() {}
+
+    public Task(String id, String name, String description, String status) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.status = status;
+    }
+
     public String getId() {
         return id;
     }

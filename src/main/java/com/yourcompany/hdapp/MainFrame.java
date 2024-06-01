@@ -1,31 +1,42 @@
 package main.java.com.yourcompany.hdapp;
 
-import com.google.cloud.firestore.Firestore;
-import com.google.cloud.firestore.FirestoreOptions;
-import com.yourcompany.hdapp.controllers.TaskController;
-import com.yourcompany.hdapp.models.Task;
-import com.yourcompany.hdapp.services.FirestoreService;
-import com.yourcompany.hdapp.views.TaskView;
+import main.java.com.yourcompany.hdapp.views.*;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class MainFrame extends JFrame {
-    private TaskController taskController;
+    private CardLayout cardLayout;
+    private JPanel mainPanel;
 
     public MainFrame() {
-        Firestore firestore = FirestoreOptions.getDefaultInstance().getService();
-        FirestoreService firestoreService = new FirestoreService(firestore);
-        this.taskController = new TaskController(firestoreService);
-
-        Task task = new Task(); // Assuming a Task object is needed
-
-        TaskView taskView = new TaskView(taskController, task);
-        add(taskView);
-
-        setTitle("Main Frame");
+        setTitle("HDApp Main Frame");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        setResizable(false);
+
+        cardLayout = new CardLayout();
+        mainPanel = new JPanel(cardLayout);
+
+        addViews();
+
+        add(mainPanel);
+    }
+
+    private void addViews() {
+        mainPanel.add(new LoginView(this), "LoginView");
+        mainPanel.add(new DashboardView(this), "DashboardView");
+        mainPanel.add(new TaskView(this), "TaskView");
+        mainPanel.add(new LocationView(this), "LocationView");
+        mainPanel.add(new SettingsView(this), "SettingsView");
+        mainPanel.add(new ReportsView(this), "ReportsView");
+        mainPanel.add(new NotificationsView(this), "NotificationsView");
+        mainPanel.add(new UserManagementView(this), "UserManagementView");
+    }
+
+    public void showView(String viewName) {
+        cardLayout.show(mainPanel, viewName);
     }
 
     public static void main(String[] args) {
