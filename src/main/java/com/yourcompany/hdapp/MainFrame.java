@@ -1,6 +1,6 @@
-package main.java.com.yourcompany.hdapp;
+package com.yourcompany.hdapp;
 
-import main.java.com.yourcompany.hdapp.views.*;
+import com.yourcompany.hdapp.views.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,7 +25,7 @@ public class MainFrame extends JFrame {
     }
 
     private void addViews() {
-        mainPanel.add(new LoginView(this), "LoginView");
+        mainPanel.add(new main.java.com.yourcompany.hdapp.views.LoginView(this), "LoginView");
         mainPanel.add(new DashboardView(this), "DashboardView");
         mainPanel.add(new TaskView(this), "TaskView");
         mainPanel.add(new LocationView(this), "LocationView");

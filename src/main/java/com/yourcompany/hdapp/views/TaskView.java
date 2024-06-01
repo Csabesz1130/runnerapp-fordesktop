@@ -1,4 +1,4 @@
-package main.java.com.yourcompany.hdapp.views;
+package com.yourcompany.hdapp.views;
 
 import com.yourcompany.hdapp.MainFrame;
 import com.yourcompany.hdapp.models.Task;

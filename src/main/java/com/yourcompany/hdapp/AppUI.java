@@ -1,4 +1,4 @@
-package main.java.com.yourcompany.hdapp;
+package com.yourcompany.hdapp;
 
 public class AppUI {
     public static void main(String[] args) {

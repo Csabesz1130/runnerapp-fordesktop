@@ -1,4 +1,4 @@
-package main.java.com.yourcompany.hdapp.services;
+package com.yourcompany.hdapp.services;
 
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.*;
